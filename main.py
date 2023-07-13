@@ -99,7 +99,8 @@ async def answer_question(call: types.CallbackQuery, callback_data: dict, state:
 
     if chosen_variant == correct_answer:
         await call.message.answer("Правильный ответ!")
-        await state.update_data(corrects=corrects + 1)
+        corrects += 1
+        await state.update_data(corrects=corrects)
     else:
         await call.message.answer(f"Неправильный ответ... Правильным был {correct_answer}")
 
