@@ -1,0 +1,13 @@
+[Unit]
+Description=Telegram Bot
+After=network.target
+
+[Service]
+User=username
+Group=username
+WorkingDirectory=/home/username/quiz-bot/
+Environment="PYTHONPATH=/home/username/quiz-bot/"
+ExecStart=/home/username/quiz-bot/.venv/bin/python /home/username/quiz-bot/main.py
+
+[Install]
+WantedBy=multi-user.target
